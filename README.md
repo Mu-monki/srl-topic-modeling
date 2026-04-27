@@ -1,5 +1,5 @@
 # SRL Study Topic Modeling
-    Install the following dependencies:
+Install the following dependencies:
     ```pip install pandas numpy nltk scikit-learn matplotlib seaborn gensim```
-    and
+and
     ```pip install pandas numpy nltk scikit-learn matplotlib seaborn gensim```
