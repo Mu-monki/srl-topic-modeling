@@ -631,8 +631,8 @@ def main():
     """
     # ==================== CONFIGURATION ====================
     # Modify these parameters based on your needs
-    CSV_PATH = 'srl-full-txt-review.csv'  # Replace with your CSV file path
-    TEXT_COLUMN = 'Abstract'     # Column containing text for analysis
+    CSV_PATH = 'topic_modeling_with_fulltext.csv'  # Replace with your CSV file path
+    TEXT_COLUMN = 'Full_Text_Cleaned'     # Column containing text for analysis
     # N_TOPICS = 10                # Number of topics to extract
     N_TOPICS = 5
     # ======================================================
