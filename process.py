@@ -103,7 +103,7 @@ class TopicModeler:
             'several', 'presented', 'discussed', 'conclusion', 'abstract',
             'introduction', 'related', 'work', 'problem', 'elsevier',
             'ltd', 'rights', 'reserved', 'springer', 'wiley', 'ieee',
-            'copyright', 'license', 'cc', 'creative', 'commons'
+            'copyright', 'license', 'cc', 'creative', 'commons',  'cid'
         })
     
     def load_data(self):
@@ -451,6 +451,26 @@ class TopicModeler:
         plt.tight_layout()
         return fig
     
+    def plot_token_chart(self):
+        labels = [
+            'Formal-informal responder dynamics', 
+            'Resilience to climate hazards', 
+            'Psychological drivers of volunteerism', 
+            'Philippine disaster governance',
+            'Computational optimization and modeling',
+            'Recovery and coordination'
+        ]
+        sizes = [22.8, 20.0, 18.7, 13.6, 13.3, 11.6]
+        colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue', 'red', 'orange']
+
+        plt.pie(sizes, labels=labels, colors=colors,autopct='%1.1f%%', startangle=140)
+        plt.axis('equal') 
+
+        # plt.title("Thematic token share per topic")
+        plt.show()
+
+        return 0
+    
     def plot_topic_heatmap(self, n_top_words=10):
         """
         Create a heatmap of top words per topic
@@ -634,7 +654,7 @@ def main():
     CSV_PATH = 'topic_modeling_with_fulltext.csv'  # Replace with your CSV file path
     TEXT_COLUMN = 'Full_Text_Cleaned'     # Column containing text for analysis
     # N_TOPICS = 10                # Number of topics to extract
-    N_TOPICS = 5
+    N_TOPICS = 6
     # ======================================================
     
     # Initialize topic modeler
@@ -715,6 +735,9 @@ def main():
     fig_heatmap.savefig('topic_heatmap.png', dpi=300, bbox_inches='tight')
     plt.close()
     print("✓ Saved: topic_heatmap.png")
+
+    # Topic Token Share
+    modeler.plot_token_chart()
     
     # Interactive visualization (if pyLDAvis is available)
     if PYLDAVIS_AVAILABLE:

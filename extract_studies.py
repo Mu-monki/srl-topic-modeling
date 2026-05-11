@@ -80,7 +80,7 @@ class PDFTextExtractor:
             'findings', 'literature', 'review', 'et', 'al',
             'copyright', 'license', 'elsevier', 'springer', 'wiley', 'taylor',
             'francis', 'routledge', 'sage', 'ieee', 'doi', 'http', 'https',
-            'www', 'pdf', 'page', 'pages', 'journal', 'volume', 'issue',
+            'www', 'pdf', 'page', 'pages', 'journal', 'volume', 'issue', 'cid'
         }
         
         self.all_stop_words = self.stop_words.union(self.academic_stop_words)
